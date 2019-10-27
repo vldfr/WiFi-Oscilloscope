@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+    {{title}}
+
+{% endblock title %}
+
+{% block content %}
+
+    <h1> {{ section_title }} </h1>
+    {% for value in sensor_data %}
+        <p>{{ value.value }}</p>
+    {% endfor %}
+
+
+{% endblock content %}

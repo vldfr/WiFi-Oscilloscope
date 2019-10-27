@@ -1,9 +1,9 @@
 # sensor/urls.py
-from django.urls import path
+from django.conf.urls import url
 
-from . import views
+from .views import home, about
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('<str:base_name>/', views.base, name='base')
+    url("home/", home),
+    # path("/", about)
 ]
