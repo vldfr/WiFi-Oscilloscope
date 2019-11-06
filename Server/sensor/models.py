@@ -9,7 +9,12 @@ class Sensor(models.Model):
     last_value = models.TextField()
 
 
-class SensorData(models.Model):
+class SensorReadingGroup(models.Model):
     sensor = models.ForeignKey(Sensor, on_delete=models.CASCADE)
+    timestamp = models.DateTimeField(default=timezone.now())
+
+
+class SensorData(models.Model):
+    group = models.ForeignKey(SensorReadingGroup, on_delete=models.CASCADE, blank=True, null=True)
     value = models.FloatField(default=0)
     timestamp = models.DateTimeField(default=timezone.now())

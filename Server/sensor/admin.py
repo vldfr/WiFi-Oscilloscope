@@ -4,3 +4,4 @@ from . import models
 
 admin.site.register(models.Sensor)
 admin.site.register(models.SensorData)
+admin.site.register(models.SensorReadingGroup)
